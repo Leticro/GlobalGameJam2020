@@ -80,6 +80,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 	uint32 bUsingMotionControllers : 1;
 
+	UPROPERTY(EditAnywhere)
+		float HEALTH_RECOVER_RATE = 0.5f;
+
 protected:
 	
 	/** Fires a projectile. */
