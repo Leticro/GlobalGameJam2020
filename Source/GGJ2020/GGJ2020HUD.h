@@ -14,6 +14,8 @@ class AGGJ2020HUD : public AHUD
 public:
 	AGGJ2020HUD();
 
+
+
 	/** Primary draw call for the HUD */
 	virtual void DrawHUD() override;
 

@@ -84,6 +84,9 @@ public:
 		float HEALTH_RECOVER_RATE = 0.5f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		int POINTS_SCALE = 100;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		float Points = 0.0f;
 
 protected:
