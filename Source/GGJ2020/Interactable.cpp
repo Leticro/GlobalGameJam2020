@@ -2,6 +2,7 @@
 
 #include "Interactable.h"
 #include "GGJ2020Character.h"
+#include "EnemyCharacter.h"
 
 // Sets default values
 AInteractable::AInteractable()
@@ -47,6 +48,13 @@ void AInteractable::Tick(float DeltaTime)
 			UE_LOG(LogTemp, Warning, TEXT("POI OVERLAP"));
 			if (Health <= 1.0f) Health += player->HEALTH_RECOVER_RATE * DeltaTime;
 			else Health = 1.0f;
+		}
+
+		AEnemyCharacter* enemy = Cast<AEnemyCharacter>(CollectedActors[iCollected]);
+		if (enemy)
+		{
+			if (Health >= 0.0f) Health -= enemy->HEALTH_DECREASE_RATE * DeltaTime;
+			else Health = 0.0f;
 		}
 	}
 }
