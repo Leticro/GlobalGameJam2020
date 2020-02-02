@@ -21,7 +21,7 @@ protected:
 
 public:
     UPROPERTY(EditAnywhere)
-        float HEALTH_DECREASE_RATE = 0.2f;
+        float HEALTH_DECREASE_RATE = 0.01f;
 
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

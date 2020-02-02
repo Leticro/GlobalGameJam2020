@@ -82,6 +82,8 @@ AGGJ2020Character::AGGJ2020Character()
 
 	// Uncomment the following line to turn motion controllers on by default:
 	//bUsingMotionControllers = true;
+
+	Points = 0;
 }
 
 void AGGJ2020Character::BeginPlay()
@@ -297,4 +299,10 @@ bool AGGJ2020Character::EnableTouchscreenMovement(class UInputComponent* PlayerI
 	}
 	
 	return false;
+}
+
+void AGGJ2020Character::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	Points += DeltaTime;
 }

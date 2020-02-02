@@ -3,6 +3,7 @@
 #include "GGJ2020Projectile.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/SphereComponent.h"
+#include "EnemyCharacter.h"
 
 AGGJ2020Projectile::AGGJ2020Projectile() 
 {
@@ -39,5 +40,13 @@ void AGGJ2020Projectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor,
 		OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
 
 		Destroy();
+	}
+
+	AEnemyCharacter* enemy = Cast<AEnemyCharacter>(OtherActor);
+	if (enemy)
+	{
+		enemy->Destroy();
+		//if (Health >= 0.0f) Health -= enemy->HEALTH_DECREASE_RATE * DeltaTime;
+		//else Health = 0.0f;
 	}
 }

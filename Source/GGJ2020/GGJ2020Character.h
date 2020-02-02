@@ -83,6 +83,9 @@ public:
 	UPROPERTY(EditAnywhere)
 		float HEALTH_RECOVER_RATE = 0.5f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float Points = 0.0f;
+
 protected:
 	
 	/** Fires a projectile. */
@@ -140,6 +143,9 @@ public:
 	FORCEINLINE class USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
 	/** Returns FirstPersonCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
+
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
 
 };
 
